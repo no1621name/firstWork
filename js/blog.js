@@ -129,7 +129,6 @@ function openArticle(e){
     renderOtherArticles(bigArticleAside, 2, thisArticleIndex);
     document.querySelectorAll('#bigArticleControl > button').forEach((el) => {
         el.onclick = null;   
-        console.log(el.onclick) 
         el.onclick = function (event){
             if (event.target.classList.contains('big-article__button__pre')) {
                 renderBigArticleText(calcIndex('pre', pathBigArticleIndex, articleContent.text), articleContent.text);
@@ -137,13 +136,10 @@ function openArticle(e){
                 renderBigArticleText(calcIndex('next', pathBigArticleIndex, articleContent.text), articleContent.text);
             }     
         };
-        console.log(el.onclick)
     });    
     document.querySelector('#bigArticleH').innerHTML = articleContent.heading;
     renderBigArticleText(pathBigArticleIndex, articleContent.text);
 }
-
-
 
 function renderOtherArticles(body, count, articleInd){
     body.innerHTML = ``;
